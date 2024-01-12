@@ -1,0 +1,10 @@
+.input-group {
+    margin-left: 40%;
+}
+
+@media (max-width: 767px) {
+    .input-group {
+        margin-left: auto; /* Center the input group horizontally */
+        text-align: center; /* Center the content within the input group */
+    }
+}
