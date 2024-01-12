@@ -36,4 +36,14 @@ goToCart(){
 goToCategoriesProductPage(pdname:any){
   this.router.navigate(['categoriesProducts'],{queryParams:{pdname:pdname}})
 }
+
+isNavbarCollapsed = true;
+
+toggleNavbar() {
+  this.isNavbarCollapsed = !this.isNavbarCollapsed;
+}
+
+gotologin(){
+  this.router.navigate(['login'])
+}
 }

@@ -1,100 +1,129 @@
+<!-- <header class="header navbar-area">
 
-    <!-- Start Header Area -->
-    <header class="header navbar-area">
-        <!-- Start Topbar -->
-        <div class="topbar">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-4 col-12">
-                        
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="top-middle">
-                            <ul class="useful-links">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="top-end">
-                            
-                            <ul class="user-login">
-                               
-                            
-                                <li>
-                                    <div class="navbar-cart">
-                                        <div class="wishlist">
-                                            <a href="javascript:void(0)">
-                                                <i class="lni lni-heart"></i>
-                                                <span class="total-items">0</span>
-                                            </a>
-                                        </div>
-                                        <div class="cart-items">
-                                            <a href="javascript:void(0)" class="main-btn"  (click)="goToCart()">
-                                                <i class="lni lni-cart"></i>
-                                                <span class="total-items">{{pdlen}}</span>
-                                            </a>
-                                          
-                                            <!--/ End Shopping Item -->
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a routerLink="login">Login/ Register</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Topbar -->
-        <!-- Start Header Middle -->
-        
-        <!-- End Header Middle -->
-        <!-- Start Header Bottom -->
+    <div class="topbar">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8 col-md-6 col-12">
-                    <div class="nav-inner">
-                        <!-- Start Mega Category Menu -->
-                        <div class="mega-category-menu">
-                            <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
-                            
-                            <ul class="sub-category" style="max-height: 200px; overflow-y: auto;">
-                                <li *ngFor="let category of catProd">
-                                    <a (click)="goToCategoriesProductPage(category)">{{ category }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- End Mega Category Menu -->
-                        <!-- Start Navbar -->
-                        <nav class="navbar navbar-expand-lg">
-                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ms-auto" >
-                                 
-                                    <li class="nav-item" *ngFor="let data of catProd">
-                                        <a (click)="goToCategoriesProductPage(data)" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">{{data}}</a>
-                                    </li>
-                                
-                                   
-                                </ul>
-                            </div> <!-- navbar collapse -->
-                        </nav>
-                        <!-- End Navbar -->
+                <div class="col-lg-4 col-md-4 col-12">
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="top-middle">
+                        <ul class="useful-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
                     </div>
                 </div>
-                
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="top-end">
+
+                        <ul class="user-login">
+
+
+                            <li>
+                                <div class="navbar-cart">
+                                    <div class="wishlist">
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-heart"></i>
+                                            <span class="total-items">0</span>
+                                        </a>
+                                    </div>
+                                    <div class="cart-items">
+                                        <a href="javascript:void(0)" class="main-btn" (click)="goToCart()">
+                                            <i class="lni lni-cart"></i>
+                                            <span class="total-items">{{pdlen}}</span>
+                                        </a>
+
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a routerLink="login">Login/ Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- End Header Bottom -->
-    </header>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-6 col-12">
+                <div class="nav-inner">
+
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+
+                                <li class="nav-item" *ngFor="let data of catProd">
+                                    <a (click)="goToCategoriesProductPage(data)" data-bs-toggle="collapse"
+                                        data-bs-target=".navbar-collapse.show">{{data}}</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</header> -->
+
+
+
+  <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-shop me-2"></i> <strong>USHOP</strong></a>
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()"  [attr.aria-expanded]="!isNavbarCollapsed" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"  >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+    
+      <div class=" collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}">
+   
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" href="#">Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-2 text-uppercase dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a *ngFor="let data of catProd" class="dropdown-item" style="justify-content: center; text-align: center;" (click)="goToCategoriesProductPage(data)">{{data}}</a>
+            </div>
+        </li>
+          
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" href="#">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link main-btn" (click)="goToCart()" style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" ><i class="fa-solid fa-cart-shopping me-1"></i> Cart &nbsp; <span class="total-items text-primary">{{pdlen}}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" (click)="gotologin()"  style="cursor: pointer;"><i class="fa-solid fa-circle-user me-1"></i> Login or Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -38,4 +38,8 @@ addToCart(data:any){
   
     }
 
+    backtoHome(){
+      this.router.navigate(['home'])
+    }
+
 }

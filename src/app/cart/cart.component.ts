@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +8,7 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-constructor(public productservice:ProductsService){}
+constructor(public productservice:ProductsService,private router:Router){}
 product:any;
 data:any;
 pdlen:any;
@@ -24,7 +25,9 @@ deleteitem(id: any) {
   this.pdlen=this.data.length;
 }
 
-
+backtoHome(){
+  this.router.navigate(['home'])
+}
 
 
 }
