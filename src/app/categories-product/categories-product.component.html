@@ -1,6 +1,7 @@
 <div class="container">
     <button type="button" class="btn btn-primary mt-3" (click)="backtoHome()">Back to Home</button>
     <div class="row">
+        <h6 class="text-center">Category: {{pdname}}</h6>
         <div class="col-lg-3 col-md-6 col-12" *ngFor="let data of categories.products">
             
             <div class="single-product">

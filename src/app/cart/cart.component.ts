@@ -12,6 +12,7 @@ constructor(public productservice:ProductsService,private router:Router){}
 product:any;
 data:any;
 pdlen:any;
+
 ngOnInit(){
  this.data=this.productservice.getCartItems();
  this.pdlen=this.data.length;
@@ -30,4 +31,17 @@ backtoHome(){
 }
 
 
+decreaseQuantity(index: number) {
+  if (this.data[index].quantity > 1) {
+    this.data[index].quantity--;    
+  }
+}
+
+increaseQuantity(index: number) {
+  this.data[index].quantity++;
+}
+
+calculateTotalPrice(): number {
+  return this.data.reduce((total:any, data:any) => total + (data.price * data.quantity), 0);
+}
 }
