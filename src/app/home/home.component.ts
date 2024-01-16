@@ -46,4 +46,8 @@ this.filtereddata=res;
 })
 }
 
+
+goToCategoriesProductPage(pdname:any){
+  this.router.navigate(['categoriesProducts'],{queryParams:{pdname:pdname}})
+}
 }
