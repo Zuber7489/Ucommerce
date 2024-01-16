@@ -1,0 +1,52 @@
+<section class="p-4 p-md-5" style="
+    background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp);
+  ">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-5">
+            <div class="card rounded-3">
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+
+                        <h6>Payment <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" /></h6>
+                    </div>
+                    <form action="" (ngSubmit)="submitForm()" #paymentForm="ngForm">
+
+                        <p class="fw-bold mb-4">Payment Details:</p>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="formControlLgXsd" class="form-control form-control-lg"
+                            [(ngModel)]="cardholderName" name="cardholderName" required />
+                            <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <div class="form-outline">
+                                    <input type="text" id="formControlLgXM" class="form-control form-control-lg"
+                                    [(ngModel)]="cardNumber" name="cardNumber" required />
+                                    <label class="form-label" for="formControlLgXM">Card Number</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-outline">
+                                    <input type="password" id="formControlLgExpk" class="form-control form-control-lg"
+                                    [(ngModel)]="expiry" name="expiry" placeholder="MM/YYYY" required />
+                                    <label class="form-label" for="formControlLgExpk">Expire</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-outline">
+                                    <input type="password" id="formControlLgcvv" class="form-control form-control-lg"
+                                        placeholder="Cvv" [(ngModel)]="cvv" name="cvv" placeholder="Cvv" required  />
+                                    <label class="form-label" for="formControlLgcvv">Cvv</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-success btn-lg btn-block" type="submit">${{calculateTotalPrice()}} Pay Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

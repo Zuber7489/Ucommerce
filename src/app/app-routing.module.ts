@@ -5,7 +5,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CartComponent } from './cart/cart.component';
 import { CategoriesProductComponent } from './categories-product/categories-product.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { RegisterComponent } from './register/register.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
+import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+
 
 const routes: Routes = [
   {path:'',redirectTo: '/home',pathMatch:'full'},
@@ -14,7 +18,11 @@ const routes: Routes = [
   {path:'cart',component:CartComponent},
   {path:'categoriesProducts',component:CategoriesProductComponent},
   {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
+  {path:'signup',component:RegisterComponent},
+  {path:'checkout',component:CheckoutComponent},
+  {path:'payment',component:PaymentComponent},
+  {path:'order-confirmation',component:OrderConfirmationComponent},
+  
 ];
 
 @NgModule({

@@ -29,19 +29,29 @@ deleteitem(id: any) {
 backtoHome(){
   this.router.navigate(['home'])
 }
+gotoCheckout(){
+  this.router.navigate(['checkout'])
+  window.scroll(0,0)
+}
 
 
 decreaseQuantity(index: number) {
   if (this.data[index].quantity > 1) {
-    this.data[index].quantity--;    
+    this.data[index].quantity--;  
+    
   }
 }
 
 increaseQuantity(index: number) {
   this.data[index].quantity++;
+  
 }
+
+
 
 calculateTotalPrice(): number {
   return this.data.reduce((total:any, data:any) => total + (data.price * data.quantity), 0);
 }
+
+
 }

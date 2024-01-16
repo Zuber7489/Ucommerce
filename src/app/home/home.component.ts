@@ -22,6 +22,7 @@ export class HomeComponent {
 openProductdetailpage(productId: number) {
   // Navigate to the "productdetail" page with the product ID as a query parameter
   this.router.navigate(['productdetail'], { queryParams: { id: productId } });
+  window.scroll(0,0)
 }
   getAllProducts(){
     this.product.getAllProducts().subscribe(res=>{

@@ -28,20 +28,20 @@
                         <div class="product-images">
                             <main id="gallery">
                                 <div class="main-img">
-                                    <img [src]="data.thumbnail" id="current" alt="#">
+                                    <img [src]="data?.thumbnail" id="current" alt="#">
                                 </div>
                                 <div class="images" >
-                                    <img *ngFor="let pdata of data.images" style="width: 91px; height: 78px;" [src]="pdata" class="img" alt="#">
+                                    <img *ngFor="let pdata of data?.images" style="width: 91px; height: 78px;" [src]="pdata" class="img" alt="#">
                                 </div>
                             </main>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-12">
-                        <div class="product-info">
-                            <h2 class="title">{{data.title}}</h2>
-                            <p class="category"><i class="lni lni-tag"></i> {{data.category}}:<a href="javascript:void(0)">{{data.brand}}</a></p>
-                            <h3 class="price">${{data.price}}<span></span></h3>
-                            <p class="info-text">{{data.description}}</p>
+                        <div class="product-info"> 
+                            <h2 class="title">{{data?.title}}</h2>
+                            <p class="category"><i class="lni lni-tag"></i> {{data?.category}}:<a href="javascript:void(0)">{{data?.brand}}</a></p>
+                            <h3 class="price">${{data?.price}}<span></span></h3>
+                            <p class="info-text">{{data?.description}}</p>
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group color-option">

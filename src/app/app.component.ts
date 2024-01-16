@@ -14,7 +14,7 @@ export class AppComponent {
     // Subscribe to router events to check the current route
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = this.router.url.includes('login') || this.router.url.includes('signup'); // Check if the current route includes 'login'
+        this.isLoginPage = this.router.url.includes('login') || this.router.url.includes('signup') || this.router.url.includes('order-confirmation'); // Check if the current route includes 'login'
       }
     });
   }
