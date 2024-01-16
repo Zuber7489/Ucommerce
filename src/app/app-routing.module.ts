@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { AllProductComponent } from './all-product/all-product.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'checkout',component:CheckoutComponent},
   {path:'payment',component:PaymentComponent},
   {path:'order-confirmation',component:OrderConfirmationComponent},
+  {path:'all-products',component:AllProductComponent},
   
 ];
 

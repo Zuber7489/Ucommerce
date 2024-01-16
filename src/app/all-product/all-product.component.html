@@ -1,0 +1,79 @@
+<div class="container"><br>
+    <h4 class="text-center">All Products</h4><hr>
+      <!-- Another variation with a button -->
+      <form [formGroup]="searchForm">
+  <div class="input-group">
+    <input type="text" class="form-control" formControlName="searchvalue" placeholder="Search Any Product">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" (click)="onSubmit()">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+    <div class="row" *ngIf="!filtereddata">
+        <div class="col-lg-3 col-md-6 col-12" *ngFor="let data of productdata?.products">
+            <!-- Start Single Product -->
+            <div class="single-product">
+                <div class="product-image">
+                    <img [src]="data?.thumbnail" alt="#" style="width: 333px; height: 220px;">
+                    <div class="button">
+                        <button (click)="openProductdetailpage(data.id)" class="btn mb-3"><i class="lni lni-item"></i> View</button>
+                        <button (click)="addToCart(data)" class="btn"><i class="lni lni-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="category">{{data?.category}}</span>
+                    <h4 class="title">
+                        <a href="product-grids.html">{{data?.title}}</a>
+                    </h4>
+                    <ul class="review">
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star"></i></li>
+                        <li><span>4.0 Review(s)</span></li>
+                    </ul>
+                    <div class="price">
+                        <span>${{data?.price}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Product -->
+        </div>
+    </div>
+
+    <div class="row" *ngIf="filtereddata">
+        <div class="col-lg-3 col-md-6 col-12" *ngFor="let data of filtereddata?.products">
+            <!-- Start Single Product -->
+            <div class="single-product">
+                <div class="product-image">
+                    <img [src]="data?.thumbnail" alt="#" style="width: 333px; height: 220px;">
+                    <div class="button">
+                        <button (click)="openProductdetailpage(data.id)" class="btn mb-3"><i class="lni lni-item"></i> View</button>
+                        <button (click)="addToCart(data)" class="btn"><i class="lni lni-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="category">{{data?.category}}</span>
+                    <h4 class="title">
+                        <a href="product-grids.html">{{data?.title}}</a>
+                    </h4>
+                    <ul class="review">
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star-filled"></i></li>
+                        <li><i class="lni lni-star"></i></li>
+                        <li><span>4.0 Review(s)</span></li>
+                    </ul>
+                    <div class="price">
+                        <span>${{data?.price}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Product -->
+        </div>
+    </div>
+</div>

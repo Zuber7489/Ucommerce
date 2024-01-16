@@ -17,6 +17,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FormsModule } from '@angular/forms';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
+import { AllProductComponent } from './all-product/all-product.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { OrderConfirmationComponent } from './order-confirmation/order-confirmat
     CheckoutComponent,
     PaymentComponent,
     OrderConfirmationComponent,
+    AllProductComponent,
     
     
   ],

@@ -46,4 +46,8 @@ toggleNavbar() {
 gotologin(){
   this.router.navigate(['login'])
 }
+
+gotoallproduct(){
+  this.router.navigate(['all-products'])
+}
 }
