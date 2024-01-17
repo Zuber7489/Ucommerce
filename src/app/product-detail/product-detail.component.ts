@@ -34,4 +34,11 @@ addToCart(data:any){
   location.reload()
   
     }
+
+    updateMainImage(imageUrl: string): void {
+      const currentImage = document.getElementById('current') as HTMLImageElement;
+      if (currentImage) {
+        currentImage.src = imageUrl;
+      }
+    }
 }

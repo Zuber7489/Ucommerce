@@ -30,8 +30,13 @@
                                 <div class="main-img">
                                     <img [src]="data?.thumbnail" id="current" alt="#">
                                 </div>
-                                <div class="images" >
-                                    <img *ngFor="let pdata of data?.images" style="width: 91px; height: 78px;" [src]="pdata" class="img" alt="#">
+                                <div class="images">
+                                    <img *ngFor="let pdata of data?.images" 
+                                         style="width: 91px; height: 78px;" 
+                                         [src]="pdata" 
+                                         class="img" 
+                                         alt="#" 
+                                         (click)="updateMainImage(pdata)">
                                 </div>
                             </main>
                         </div>
@@ -47,21 +52,15 @@
                                     <div class="form-group color-option">
                                         <label class="title-label" for="size">Rating</label>
                                         <div class="single-checkbox checkbox-style-1">
-                                            <input type="checkbox" id="checkbox-1" checked>
-                                            <label for="checkbox-1"><span></span></label>
+                                            <div class="star yellow">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                              </div>
                                         </div>
-                                        <div class="single-checkbox checkbox-style-2">
-                                            <input type="checkbox" id="checkbox-2">
-                                            <label for="checkbox-2"><span></span></label>
-                                        </div>
-                                        <div class="single-checkbox checkbox-style-3">
-                                            <input type="checkbox" id="checkbox-3">
-                                            <label for="checkbox-3"><span></span></label>
-                                        </div>
-                                        <div class="single-checkbox checkbox-style-4">
-                                            <input type="checkbox" id="checkbox-4">
-                                            <label for="checkbox-4"><span></span></label>
-                                        </div>
+                                     
                                     </div>
                                 </div>
                               
@@ -86,11 +85,7 @@
                                         </div>
                                     </div>
                               
-                                    <div class="col-lg-6 col-md-4 col-12">
-                                        <div class="wish-button">
-                                            <button class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>

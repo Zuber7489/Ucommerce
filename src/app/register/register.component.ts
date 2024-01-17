@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  constructor(public router:Router){}
+  constructor(public router:Router,public auth:AuthService){}
 
   SignUpForm=new FormGroup({
+    name:new FormControl(''),
     email:new FormControl(''),
     password:new FormControl(''),
   })
@@ -21,5 +23,9 @@ export class RegisterComponent {
   }
   submitNow(){
     console.log(this.SignUpForm.value)
+    this.auth.postFormData(this.SignUpForm.value).subscribe(res=>{
+ alert('Signup Successfull')
+ this.router.navigate(['/login'])   
+    })
   }
 }
