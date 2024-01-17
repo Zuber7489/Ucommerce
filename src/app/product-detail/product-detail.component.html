@@ -28,11 +28,11 @@
                         <div class="product-images">
                             <main id="gallery">
                                 <div class="main-img">
-                                    <img [src]="data?.thumbnail" id="current" alt="#">
+                                    <img [src]="data?.thumbnail" id="current" alt="#" style="width: 515px !important; height: 346px !important;" >
                                 </div>
                                 <div class="images">
                                     <img *ngFor="let pdata of data?.images" 
-                                         style="width: 91px; height: 78px;" 
+                                         style="width: 91px !important; height: 78px !important;" 
                                          [src]="pdata" 
                                          class="img" 
                                          alt="#" 
