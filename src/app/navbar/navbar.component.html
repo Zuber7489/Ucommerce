@@ -21,7 +21,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a *ngFor="let data of catProd" class="dropdown-item"
                             style="justify-content: center; text-align: center;"
-                            (click)="goToCategoriesProductPage(data)">{{data}}</a>
+                            (click)="goToCategoriesProductPage(data.name)">{{data.name}}</a>
                     </div>
                 </li>
 
