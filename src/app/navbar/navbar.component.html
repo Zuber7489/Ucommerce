@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="#"><i class="fa-solid fa-shop me-2"></i> <strong>USHOP</strong></a>
         <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavbarCollapsed"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.hide">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}">
@@ -11,7 +11,8 @@
                     <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2 text-uppercase" style="cursor: pointer;" (click)="gotoallproduct()">Products</a>
+                    <a class="nav-link mx-2 text-uppercase" style="cursor: pointer;" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show" (click)="gotoallproduct()" >Products</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link mx-2 text-uppercase dropdown-toggle" href="#" role="button"
