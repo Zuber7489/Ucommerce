@@ -5,8 +5,8 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class=" collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}">
-            <ul class="navbar-nav ms-auto ">
+        <div class="collapse navbar-collapse" [ngClass]="{'show': !isNavbarCollapsed}">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#">Home</a>
                 </li>
@@ -24,8 +24,9 @@
                             (click)="goToCategoriesProductPage(data.name)">{{data.name}}</a>
                     </div>
                 </li>
-
             </ul>
+
+            <!-- Pushing name and logout to the far right -->
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link main-btn" (click)="goToCart()" style="cursor: pointer;" data-bs-toggle="collapse"
@@ -33,8 +34,11 @@
                         &nbsp; <span class="total-items text-primary">{{pdlen}}</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2 text-uppercase" (click)="gotologin()" style="cursor: pointer;"><i
-                            class="fa-solid fa-circle-user me-1"></i> Login or Register</a>
+                    <a class="nav-link mx-2 text-uppercase" style="cursor: pointer;"><i
+                            class="fa-solid fa-circle-user me-1"></i>{{name}}</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-danger" style="margin-top: 13px;" (click)="gotologin()">Logout</button>
                 </li>
             </ul>
         </div>

@@ -10,20 +10,21 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { AllProductComponent } from './all-product/all-product.component';
+import { authGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  {path:'',redirectTo: '/home',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'productdetail',component:ProductDetailComponent},
-  {path:'cart',component:CartComponent},
-  {path:'categoriesProducts',component:CategoriesProductComponent},
+  {path:'',redirectTo: '/login',pathMatch:'full'},
+  {path:'home',component:HomeComponent,canActivate:[authGuard]},
+  {path:'productdetail',component:ProductDetailComponent,canActivate:[authGuard]},
+  {path:'cart',component:CartComponent,canActivate:[authGuard]},
+  {path:'categoriesProducts',component:CategoriesProductComponent,canActivate:[authGuard]},
   {path:'login',component:LoginComponent},
   {path:'signup',component:RegisterComponent},
-  {path:'checkout',component:CheckoutComponent},
-  {path:'payment',component:PaymentComponent},
-  {path:'order-confirmation',component:OrderConfirmationComponent},
-  {path:'all-products',component:AllProductComponent},
+  {path:'checkout',component:CheckoutComponent,canActivate:[authGuard]},
+  {path:'payment',component:PaymentComponent,canActivate:[authGuard]},
+  {path:'order-confirmation',component:OrderConfirmationComponent,canActivate:[authGuard]},
+  {path:'all-products',component:AllProductComponent,canActivate:[authGuard]},
   
 ];
 

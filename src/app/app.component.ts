@@ -8,13 +8,15 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Ucommerce';
-  isLoginPage: boolean=false;
+  isLoginPage: boolean = false;
 
   constructor(private router: Router) {
     // Subscribe to router events to check the current route
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = this.router.url.includes('login') || this.router.url.includes('signup') || this.router.url.includes('order-confirmation'); // Check if the current route includes 'login'
+        // Check if the current route is login, signup, or order-confirmation
+        const loginRoutes = ['/login', '/signup', '/order-confirmation'];
+        this.isLoginPage = loginRoutes.some(route => this.router.url.includes(route));
       }
     });
   }

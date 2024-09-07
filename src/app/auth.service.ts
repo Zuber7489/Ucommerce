@@ -1,18 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {GoogleAuthProvider,FacebookAuthProvider} from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  constructor(private afAuth: AngularFireAuth) {}
 
-  constructor(public http:HttpClient) { }
+  signUp(email: string, password: string) {
+    return this.afAuth.createUserWithEmailAndPassword(email, password);
+  }
 
-postFormData(id:any){
-  return this.http.post('https://recuitment-app-database.onrender.com/signup',id)
-}
-getFormData(id:any){
-  return this.http.get('https://recuitment-app-database.onrender.com/signup',id)
-}
+  signIn(email: string, password: string) {
+    return this.afAuth.signInWithEmailAndPassword(email, password);
+  }
+
+  signOut(): Promise<void> {
+    return this.afAuth.signOut();
+  }
+
+
+  loginWithGoogle() {
+    return this.afAuth.signInWithPopup(new GoogleAuthProvider());
+  }
 
 }

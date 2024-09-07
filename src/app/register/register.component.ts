@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,22 +10,41 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
 
-  constructor(public router:Router,public auth:AuthService){}
+  signupForm: FormGroup;
 
-  SignUpForm=new FormGroup({
-    name:new FormControl(''),
-    email:new FormControl(''),
-    password:new FormControl(''),
-  })
+  constructor(private fb: FormBuilder, private authService: AuthService,public router:Router) {
+    this.signupForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
+  ngOnInit(): void {
+    
+  }
+  signup() {
+    if (this.signupForm.valid) {
+      console.log('Form Submitted', this.signupForm.value);
+      // Handle the signup logic here
+      const { email, password } = this.signupForm.value;
+    
+      this.authService.signUp(email, password)
+        .then(() => {
+          console.log('Sign up successful');
+          alert('Signup Successfully')
+          this.router.navigate(['login']);
+        })
+        .catch(error => {
+          console.error('Sign up error', error);
+          alert('please check login email or password')
+        });
+    }
+
+  }
   
-  gotoLoginPage(){
+
+  signupredirect(){
     this.router.navigate(['login'])
   }
-  submitNow(){
-    console.log(this.SignUpForm.value)
-    this.auth.postFormData(this.SignUpForm.value).subscribe(res=>{
- alert('Signup Successfull')
- this.router.navigate(['/login'])   
-    })
-  }
+
+
 }

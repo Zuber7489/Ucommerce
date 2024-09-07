@@ -18,6 +18,9 @@ import { PaymentComponent } from './payment/payment.component';
 import { FormsModule } from '@angular/forms';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 import { AllProductComponent } from './all-product/all-product.component';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { AllProductComponent } from './all-product/all-product.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

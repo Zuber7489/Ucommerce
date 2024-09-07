@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '../products.service';
-import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -9,45 +8,63 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  constructor(public router: Router, public productService: ProductsService) {}
+  data: any;
+  pdlen: any;
+  catProd: any;
+  name: any;
+  isNavbarCollapsed = true;  // State to track if the navbar is collapsed
 
-constructor(public router:Router,public productService:ProductsService){}
-data:any;
-pdlen:any;
-catProd:any;
-getCategoriesProduct(){
-  this.productService.getCategories().subscribe(res=>{
-    this.catProd=res;
-  },
-  (error) => {
-    console.error('Error fetching categories:', error);
-  })
-}
-ngOnInit(){
-  this.data=this.productService.getCartItems();
-  this.pdlen=this.data.length;
-  this.getCategoriesProduct();
-}
+  // Fetch product categories
+  getCategoriesProduct() {
+    this.productService.getCategories().subscribe(
+      res => {
+        this.catProd = res;
+      },
+      error => {
+        console.error('Error fetching categories:', error);
+      }
+    );
+  }
 
-goToCart(){
-  this.router.navigate(['cart'])
-}
+  ngOnInit() {
+    this.data = this.productService.getCartItems();
+    this.pdlen = this.data.length;
+    this.getCategoriesProduct();
+    this.name = localStorage.getItem('loggedInUserEmail');
+  }
 
+  // Navigation methods
 
-goToCategoriesProductPage(pdname:any){
-  this.router.navigate(['categoriesProducts'],{queryParams:{pdname:pdname}})
-}
+  goToCart() {
+    this.router.navigate(['cart']).then(() => {
+      this.isNavbarCollapsed = true; // Close the navbar after navigation
+    });
+  }
 
-isNavbarCollapsed = true;
+  goToCategoriesProductPage(pdname: any) {
+    this.router.navigate(['categoriesProducts'], { queryParams: { pdname: pdname } }).then(() => {
+      this.isNavbarCollapsed = true; // Close the navbar after navigation
+    });
+  }
 
-toggleNavbar() {
-  this.isNavbarCollapsed = !this.isNavbarCollapsed;
-}
+  gotoallproduct() {
+    this.router.navigate(['all-products']).then(() => {
+      this.isNavbarCollapsed = true; // Close the navbar after navigation
+    });
+  }
 
-gotologin(){
-  this.router.navigate(['login'])
-}
+  // Logout method
+  gotologin() {
+    localStorage.removeItem('loggedInUserEmail');
+    localStorage.removeItem('loggedInUserPassword');
+    this.router.navigate(['login']).then(() => {
+      this.isNavbarCollapsed = true; // Close the navbar after navigation
+    });
+  }
 
-gotoallproduct(){
-  this.router.navigate(['all-products'])
-}
+  // Toggle navbar collapse state
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
 }
